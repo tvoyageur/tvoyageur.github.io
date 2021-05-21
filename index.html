@@ -1,1 +1,387 @@
-<p>Hello 大家好</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Brick713 的小黑屋</title>
+<meta name="description" content="May The Force Be With You">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://brick713.github.io/favicon.ico?v=1596523582266">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://brick713.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-73319140-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-73319140-1');
+</script>
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://brick713.github.io">
+        <img src="https://brick713.github.io/images/avatar.png?v=1596523582266" class="site-logo">
+        <h1 class="site-title">Brick713 的小黑屋</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="https://brick713.github.io/post/about/" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/brick713" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://twitter.com/YuppiesBrick" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://weibo.com/brick123" target="_blank">
+            <i class="fab fa-weibo"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://www.zhihu.com/people/brick713" target="_blank">
+            <i class="fab fa-zhihu"></i>
+          </a>
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      May The Force Be With You
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://brick713.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://brick713.github.io/post/yi-dong-duan-an-quan-xiu-lian-san/">
+                  <h2 class="post-title">移动端安全修炼（三）</h2>
+                </a>
+                <div class="post-date">
+                  2019-06-03
+                </div>
+                <div class="post-abstract">
+                  <h2 id="起因">起因</h2>
+<p>Android 7.0 之后 Google 默认不信任 User 域下的证书，也就是自行导入证书的方式去抓 HTTPS 包的方法已经不管用了，再加上现在大部分 App 都使用了 SSL Pinning，因此抓包的难度也比之前大了不少。此时再想抓 HTTPS 的流量就要用别的方法了。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://brick713.github.io/post/yi-dong-duan-an-quan-xiu-lian-san/">
+                  <div class="feature-container" style="background-image: url('https://brick713.github.io/post-images/yi-dong-duan-an-quan-xiu-lian-san.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://brick713.github.io/post/kubernetes-api-server-wei-shou-quan-fang-wen-lou-dong/">
+                  <h2 class="post-title">Kubernetes Api Server 未授权访问漏洞</h2>
+                </a>
+                <div class="post-date">
+                  2018-12-05
+                </div>
+                <div class="post-abstract">
+                  <h1 id="0x00-漏洞原因">0x00 漏洞原因</h1>
+<p>Kubernetes 的服务在正常启动后会开启两个端口：</p>
+<ol>
+<li>Localhost Port （默认8080）</li>
+<li>Secure Port （默认6443）</li>
+</ol>
+<p>这两个端口都是提供 Api Server 服务的，一个可以直接通过 Web 访问，另一个可以通过 kubectl 客户端进行调用。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://brick713.github.io/post/kubernetes-api-server-wei-shou-quan-fang-wen-lou-dong/">
+                  <div class="feature-container" style="background-image: url('https://brick713.github.io/post-images/kubernetes-api-server-wei-shou-quan-fang-wen-lou-dong.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://brick713.github.io/post/yi-dong-duan-an-quan-xiu-lian-er/">
+                  <h2 class="post-title">移动端安全修炼（二）</h2>
+                </a>
+                <div class="post-date">
+                  2017-10-15
+                </div>
+                <div class="post-abstract">
+                  <h2 id="前因">前因</h2>
+<p>iOS针对IAP有一个保护机制，如果使用了全局代理的方式，iOS检查到之后为了保障交易的安全性，将会拒绝IAP流程，所以是无法抓取交易数据的，以豆瓣阅读为例，未开启代理时，可以正常的进入IAP充值界面，开启代理后则会报错：</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://brick713.github.io/post/yi-dong-duan-an-quan-xiu-lian-er/">
+                  <div class="feature-container" style="background-image: url('https://brick713.github.io/post-images/yi-dong-duan-an-quan-xiu-lian-er.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://brick713.github.io/post/qian-xi-dns-fan-she-fang-da-gong-ji/">
+                  <h2 class="post-title">浅析DNS反射放大攻击</h2>
+                </a>
+                <div class="post-date">
+                  2016-08-19
+                </div>
+                <div class="post-abstract">
+                  <h1 id="dns反射放大攻击分析">DNS反射放大攻击分析</h1>
+<p>前阵子业务上碰到了DDOS攻击，正好是DNS反射型的，之前只是听过，没自己处理过，仔细学习了一番之后做点记录。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://brick713.github.io/post/qian-xi-dns-fan-she-fang-da-gong-ji/">
+                  <div class="feature-container" style="background-image: url('https://brick713.github.io/post-images/qian-xi-dns-fan-she-fang-da-gong-ji.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://brick713.github.io/post/yi-dong-duan-an-quan-xiu-lian-1/">
+                  <h2 class="post-title">移动端安全修炼（一）</h2>
+                </a>
+                <div class="post-date">
+                  2016-04-06
+                </div>
+                <div class="post-abstract">
+                  <p>新开一个坑，主要是记录自己学习移动端的一些相关知识。从基础到复杂吧，也不知道能写多少。从最开始的环境开始。</p>
+<p>移动端安全和Web差别并不大，也是分为服务端和客户端，只不过客户端换成了一个App，服务端和Web基本一致。因此挖掘服务端端漏洞和Web没有太大差别。重点在于如何挖掘客户端端漏洞，涉及反编译，代码审计，等等。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://brick713.github.io/post/yi-dong-duan-an-quan-xiu-lian-1/">
+                  <div class="feature-container" style="background-image: url('https://brick713.github.io/post-images/yi-dong-duan-an-quan-xiu-lian-1.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://brick713.github.io/post/phpcms-authkey-xie-lu-lou-dong-fen-xi/">
+                  <h2 class="post-title">PHPCMS Authkey 泄露漏洞分析</h2>
+                </a>
+                <div class="post-date">
+                  2016-03-10
+                </div>
+                <div class="post-abstract">
+                  <h1 id="phpcms-v9-authkey泄露漏洞">PHPCMS V9 Authkey泄露漏洞</h1>
+<p>在PHPCMS V9的版本中（现已修复）</p>
+<p><code>phpcms/phpsso\_server/phpcms/modules/phpsso/index.php</code></p>
+<p>中有一段代码如下：</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://brick713.github.io/post/phpcms-authkey-xie-lu-lou-dong-fen-xi/">
+                  <div class="feature-container" style="background-image: url('https://brick713.github.io/post-images/phpcms-authkey-xie-lu-lou-dong-fen-xi.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://brick713.github.io/post/nginx-an-quan-xing-neng-pei-zhi-andddos-fang-fan/">
+                  <h2 class="post-title">Nginx安全性能配置&amp;&amp;DDOS防范</h2>
+                </a>
+                <div class="post-date">
+                  2016-03-09
+                </div>
+                <div class="post-abstract">
+                  <!-- more -->
+<p>最近看了一些Nginx的配置的文章主要和性能有关，包括一些安全上的配置，并不对所有设备适用，总结下来觉得有用的可以自取，另外是加深自己对服务器的理解。其中有一些有关DDOS的配置。内容参考了两篇文章和自己的一些安全理解。文章地址如下：</p>
+<p><a href="https://nginx.com/blog/tuning-nginx/">Tuning NGINX for Performance</a></p>
+<p><a href="https://www.nginx.com/blog/mitigating-ddos-attacks-with-nginx-and-nginx-plus/">Mitigating DDoS Attacks with NGINX and NGINX Plus</a></p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://brick713.github.io/post/nginx-an-quan-xing-neng-pei-zhi-andddos-fang-fan/">
+                  <div class="feature-container" style="background-image: url('https://brick713.github.io/post-images/nginx-an-quan-xing-neng-pei-zhi-andddos-fang-fan.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://brick713.github.io/post/linuxbillgates-jiang-shi-wang-luo-fen-xi/">
+                  <h2 class="post-title">Linux/BillGates僵尸网络分析</h2>
+                </a>
+                <div class="post-date">
+                  2015-11-05
+                </div>
+                <div class="post-abstract">
+                  <!--  more  -->
+<h1 id="0x00起因">0x00起因</h1>
+<p>前阵子在用户某台设备上检测到一个IP在向外大量的发送SSH链接请求，而且有大量的DDOS其他IP的嫌疑。很明显这个IP的机器已经被人黑了，自然需要检测原因。于是就一步步开始排查。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://brick713.github.io/post/linuxbillgates-jiang-shi-wang-luo-fen-xi/">
+                  <div class="feature-container" style="background-image: url('https://brick713.github.io/post-images/linuxbillgates-jiang-shi-wang-luo-fen-xi.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://brick713.github.io/post/wordpress-wp-all-import-cha-jian-lou-dong-fen-xi/">
+                  <h2 class="post-title">Wordpress WP All Import插件漏洞分析</h2>
+                </a>
+                <div class="post-date">
+                  2015-10-31
+                </div>
+                <div class="post-abstract">
+                  <!--more-->
+<h1 id="0x00-插件">0x00 插件</h1>
+<p>Wordpress WP All Import 3.2.3 (Pro 4.0.3)插件主要功能是支持用户上传XML和CSV文件。一般这种支持上传功能的插件最最最危险的地方就是不做文件格式检测，或者是检测方法过弱易被绕过。<br>
+该插件上传的文件可以通过</p>
+<p>http://&quot;+site+&quot;/wp-content/uploads/wpallimport/uploads/&quot;+up_dir+&quot;/ 路径访问。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://brick713.github.io/post/wordpress-wp-all-import-cha-jian-lou-dong-fen-xi/">
+                  <div class="feature-container" style="background-image: url('https://brick713.github.io/post-images/wordpress-wp-all-import-cha-jian-lou-dong-fen-xi.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://brick713.github.io/post/tomcat-manager-hou-tai-lou-dong-fen-xi/">
+                  <h2 class="post-title">Tomcat Manager 后台漏洞分析</h2>
+                </a>
+                <div class="post-date">
+                  2015-10-22
+                </div>
+                <div class="post-abstract">
+                  <h1 id="0x00-起源">0x00 起源</h1>
+<p>之前分析某设备被入侵，一直没查出来攻击者是怎么黑掉设备的，于是对着设备一通分析。结果发现了另外一条黑进去的方法。。。当然最好是弄清楚了实际原因，附带给把这个意外的漏洞给修了，回去研究发现原因很简单。</p>
+<p>顺带一提，漏洞形成的原因虽然是Tomcat本身的原因，但是开发公司各种糟糕的配置是把该问题放大的帮凶。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://brick713.github.io/post/tomcat-manager-hou-tai-lou-dong-fen-xi/">
+                  <div class="feature-container" style="background-image: url('https://brick713.github.io/post-images/tomcat-manager-hou-tai-lou-dong-fen-xi.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+
+          <div class="pagination-container">
+  
+  
+    <a href="https://brick713.github.io/page/2" class="next">下一页 <i class="icon-arrow-ios-forward-outline"></i></a>
+  
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
